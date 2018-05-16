@@ -1,0 +1,25 @@
+{
+  "name": "customers",
+  "version": "1.0.0",
+  "description": "customers-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnner/customers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnner/customers/issues"
+  },
+  "homepage": "https://github.com/johnner/customers#readme",
+  "dependencies": {
+    "express": "~4.16.3",
+    "mongoose": "~5.1.1",
+    "morgan": "~1.9.0"
+  }
+}
