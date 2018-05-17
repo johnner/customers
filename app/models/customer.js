@@ -4,11 +4,8 @@ const autoinc = require('mongoose-plugin-autoinc');
 
 const Schema = mongoose.Schema;
 const customerSchema = new Schema({
-  customerID:  {type: Number, unique: true},
-  name: {
-    first: String,
-    last: String
-  },
+  customerID:  { type: Number, unique: true },
+  name: { first: String, last: String },
   birthday: Date,
   gender: String,
   lastContact: Date,
@@ -23,5 +20,4 @@ customerSchema.plugin(autoinc.autoIncrement, {
   incrementBy: 1
 });
 
-const Customer = mongoose.model('Customer', customerSchema);
-module.exports = Customer;
+module.exports = mongoose.model('customer', customerSchema);

@@ -1,0 +1,10 @@
+# Use app image as base image
+FROM customers
+
+# Copy test files
+COPY test test
+ENV NODE_ENV test
+ENV DB_HOST mongo_test
+RUN npm update
+# Run tests
+CMD ["npm", "test"]
