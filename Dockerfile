@@ -11,10 +11,13 @@ RUN mkdir -p /opt/app
 WORKDIR /opt/app
 COPY package.json /opt/app
 RUN npm i npm@latest -g
+RUN npm install -g @angular/cli
 RUN npm install
 
 ENV NODE_ENV dev
 COPY . /opt/app
-
 EXPOSE 3000
+
+RUN cd client && ng build
+
 CMD ["npm", "start"]

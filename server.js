@@ -3,6 +3,7 @@
 let express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const path = require('path');
 const config = require('./config');
 const apiRouter = require('./app/routes/api');
 
@@ -27,6 +28,11 @@ mongoose.connect(connectString, options, function (err, db) {
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'client/dist')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+
+});
 app.use('/api', apiRouter);
 app.listen(config.app.port);
 

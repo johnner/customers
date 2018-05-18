@@ -1,15 +1,23 @@
 {
   "name": "customers",
   "version": "1.0.0",
-  "description": "customers app",
+  "scripts": {
+    "start": "set NODE_ENV=dev && node server",
+    "test": "set NODE_ENV=test && mocha --timeout 10000",
+    "build": "webpack --progress",
+    "build:prod": "webpack -p --progress",
+    "ng_test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnner/customers.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Anton Zhusman",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/johnner/customers/issues"
   },
@@ -25,9 +33,5 @@
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
     "mocha": "^5.1.1"
-  },
-  "scripts": {
-    "start": "set NODE_ENV=dev && node server",
-    "test": "set NODE_ENV=test && mocha --timeout 10000"
   }
 }
