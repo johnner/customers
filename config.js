@@ -34,4 +34,4 @@ const config = {
   'dev': dev,
   'test': test
 };
-module.exports = config[env];
+module.exports = config[env] || dev;

@@ -1,10 +1,17 @@
-# customers
-customers-app
+# customers-app
 
-# Run app
+Simple web application built with: Docker, MongoDB, Nodejs, Express, Angular 6
+
+# Run app locally
 - Run with docker: `docker-compose up`
 - Check container IP with `docker-machine ip` and open the app in the browser (i.e. `192.168.99.100:3000`)
 - Re-run during development when source changed: `docker-compose up -d --no-deps --build customers_app`
+
+#### Alternative:
+- install node dependencies `npm i`
+- run mongo in container `docker-compose up -d --build mongo`, set up container's host:port in `.env` (i.e. `192.168.99.100:27017`)
+- run app locally: `npm run dev`
+- open browser at `localhost:3000/`
 
 # Configuration
 Configuration variables are defined by Environment Variables and in .env file. 

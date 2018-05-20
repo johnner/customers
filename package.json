@@ -4,11 +4,12 @@
   "scripts": {
     "start": "set NODE_ENV=dev && node server",
     "test": "set NODE_ENV=test && mocha --timeout 10000",
-    "build": "webpack --progress",
+    "build": "cd client && ng build",
     "build:prod": "webpack -p --progress",
     "ng_test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev": "set NODE_ENV=dev && concurrently \"cd client && ng build --watch\" \"nodemon server/main.js\""
   },
   "main": "server.js",
   "repository": {
@@ -32,6 +33,8 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
-    "mocha": "^5.1.1"
+    "concurrently": "^3.5.1",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.4"
   }
 }
