@@ -34,11 +34,11 @@ function startApp() {
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
   app.use(express.static(path.join(__dirname, 'client/dist')));
-  app.get('/', (req, res) => {
+  app.use('/api', apiRouter);
+  app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client/dist/index.html'));
 
   });
-  app.use('/api', apiRouter);
   app.listen(config.app.port);
 
 // don't show the log when it is test

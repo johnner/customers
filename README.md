@@ -2,6 +2,12 @@
 
 Simple web application built with: Docker, MongoDB, Nodejs, Express, Angular 6
 
+## Project structure:
+Nodejs Express server configured at the project root (`server.js` and `app` directory).
+`app` directory contains server-related models and routes.
+
+Client-side is initialized in the `client` directory. It's Angular 6 application written with Typescript, LESS and Angular Material (https://material.angular.io)
+
 # Run app locally
 - Run with docker: `docker-compose up`
 - Check container IP with `docker-machine ip` and open the app in the browser (i.e. `192.168.99.100:3000`)
