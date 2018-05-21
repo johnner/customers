@@ -1,4 +1,4 @@
-# customers-app
+# Customers CRUD app
 
 Simple web application built with: Docker, MongoDB, Nodejs, Express, Angular 6
 
