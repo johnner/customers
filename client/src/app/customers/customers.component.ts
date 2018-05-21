@@ -16,10 +16,6 @@ export class CustomersComponent implements OnInit {
     this.getCustomers();
   }
 
-  onSelect(customer: Customer) {
-    this.selectedCustomer = customer;
-  }
-
   getCustomers(): void {
     this.customerService
       .getCustomers()
