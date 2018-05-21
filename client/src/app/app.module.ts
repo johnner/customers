@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashComponent } from './dash/dash.component';
+import { CustomerAddComponent } from './customer-add/customer-add.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DashComponent } from './dash/dash.component';
     CustomersComponent,
     CustomerDetailComponent,
     MessagesComponent,
-    DashComponent
+    DashComponent,
+    CustomerAddComponent
   ],
   imports: [
     BrowserModule,

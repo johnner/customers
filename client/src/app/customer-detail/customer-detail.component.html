@@ -2,10 +2,28 @@
   <h2>{{ customer.name.first}} Details</h2>
   <div><span>id: </span>{{customer.customerID}}</div>
   <div>
-    <label>name:
-      <input [(ngModel)]="customer.name.first" placeholder="first name">
-      <input [(ngModel)]="customer.name.last" placeholder="last name">
-    </label>
+    <p>
+      <label>name:
+        <input [(ngModel)]="customer.name.first" placeholder="first name">
+        <input [(ngModel)]="customer.name.last" placeholder="last name">
+      </label>
+    </p>
+    <p>
+      <label>birthday:
+        <input [(ngModel)]="customer.birthday" placeholder="birthday">
+      </label>
+    </p>
+    <p>
+      <label>gender:
+        <input [(ngModel)]="customer.gender" placeholder="gender">
+      </label>
+    </p>
+    <p>
+      <label>Lifetime Value
+        <input [(ngModel)]="customer.customerLifetimeValue" placeholder="customerLifetimeValue">
+      </label>
+    </p>
   </div>
+  <button (click)="save()">save</button>
   <button (click)="goBack()">< go back</button>
 </div>

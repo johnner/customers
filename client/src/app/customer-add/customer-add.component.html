@@ -1,0 +1,27 @@
+<h2>Add new customer</h2>
+<div>
+  <p>
+    <label>Name:
+      <input [(ngModel)]="customer.name.first" placeholder="first name">
+      <input [(ngModel)]="customer.name.last" placeholder="last name">
+    </label>
+  </p>
+  <p>
+    <label>Birthday:
+      <input [(ngModel)]="customer.birthday" placeholder="birthday">
+    </label>
+  </p>
+  <p>
+    <label>Gender:
+      <input [(ngModel)]="customer.gender" placeholder="gender">
+    </label>
+  </p>
+  <p>
+    <label>Lifetime Value:
+      <input [(ngModel)]="customer.customerLifetimeValue" placeholder="customerLifetimeValue">
+    </label>
+  </p>
+</div>
+<button (click)="save()">Save</button>
+<button (click)="goBack()">< go back</button>
+

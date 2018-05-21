@@ -22,13 +22,16 @@ router.get('/customers', function(req, res) {
  * ADD new customer
  */
 router.post('/customers', function(req, res) {
-  let { name } = req.body;
+  let { name, birthday, gender, customerLifetimeValue } = req.body;
   name = name || {};
   Customer.create({
     name: {
      first: name.first,
      last: name.last
     },
+    birthday,
+    gender,
+    customerLifetimeValue
   }).then(customer => {
     res.json(customer)
   });
@@ -38,7 +41,7 @@ router.post('/customers', function(req, res) {
  * GET /customer/:id route to retrieve a customer
  */
 router.get('/customers/:id', function (req, res) {
-  Customer.findOne({ "customerID": req.params.id}, (err, customer) => {
+  Customer.findOne({ 'customerID': req.params.id}, (err, customer) => {
       if(err) res.send(err);
       res.json(customer);
   });
@@ -49,7 +52,7 @@ router.get('/customers/:id', function (req, res) {
  * UPDATE customer by id
  */
 router.put('/customers/:id', function (req, res) {
-  Customer.findOne({customerID: req.params.id}, (err, customer) => {
+  Customer.findOne({ 'customerID': req.params.id }, (err, customer) => {
     if(err) res.send(err);
     Object.assign(customer, req.body).save((err, customer) => {
       if(err) res.send(err);
@@ -58,6 +61,21 @@ router.put('/customers/:id', function (req, res) {
   });
 });
 
+
+
+/*
+ * DEKETE /customer/:id route to delete a customer
+ */
+router.delete('/customers/:id', function (req, res) {
+  Customer.findOneAndRemove({ 'customerID': req.params.id }, (err, customer) => {
+    if (err) return res.status(500).send(err);
+    const response = {
+      message: "Customer successfully deleted",
+      id: customer.customerID
+    };
+    return res.status(200).send(response);
+  });
+});
 
 
 module.exports = router;

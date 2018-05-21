@@ -32,4 +32,10 @@ export class CustomerDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    this.customerService
+      .updateCustomer(this.customer)
+      .subscribe(() => this.goBack());
+  }
 }
