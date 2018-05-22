@@ -1,9 +1,0 @@
-<h2>Customers</h2>
-<ul class="customers">
-  <li *ngFor="let customer of customers">
-    <a routerLink="/customers/{{customer.customerID}}">
-      <span class="badge">{{customer.customerID}}</span> -- {{customer.name.first}}
-    </a>
-    <button class="delete" title="delete customer" (click)="delete(customer)">x</button>
-  </li>
-</ul>

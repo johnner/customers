@@ -1,27 +1,45 @@
-<h2>Add new customer</h2>
-<div>
-  <p>
-    <label>Name:
-      <input [(ngModel)]="customer.name.first" placeholder="first name">
-      <input [(ngModel)]="customer.name.last" placeholder="last name">
-    </label>
-  </p>
-  <p>
-    <label>Birthday:
-      <input [(ngModel)]="customer.birthday" placeholder="birthday">
-    </label>
-  </p>
-  <p>
-    <label>Gender:
-      <input [(ngModel)]="customer.gender" placeholder="gender">
-    </label>
-  </p>
-  <p>
-    <label>Lifetime Value:
-      <input [(ngModel)]="customer.customerLifetimeValue" placeholder="customerLifetimeValue">
-    </label>
-  </p>
-</div>
+<form class="add-customer-form" name="add-customer-form">
+  <h2>Add new customer</h2>
+  <div>
+    <mat-form-field class="customer-form-field">
+      <input matInput placeholder="First name"
+             [(ngModel)]="customer.name.first"
+             name="first">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="customer-form-field">
+      <input matInput placeholder="Last name"
+             [(ngModel)]="customer.name.last"
+             name="last">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker"
+             placeholder="Birthday date"
+             name="birthday"
+             [(ngModel)]="customer.birthday">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-select [(value)]="selected" [(ngModel)]="customer.gender" name="gender">
+        <mat-option value="m">Male</mat-option>
+        <mat-option value="f">Female</mat-option>
+        <mat-option value="o">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="customer-form-field">
+      <input matInput placeholder="Lifetime Value"
+             [(ngModel)]="customer.customerLifetimeValue"
+             name="customerLifetimeValue">
+    </mat-form-field>
+  </div>
+</form>
 <button (click)="save()">Save</button>
 <button (click)="goBack()">< go back</button>
-

@@ -9,7 +9,7 @@ import { CustomerService } from "../customer.service";
   styleUrls: ['./customer-add.component.less']
 })
 export class CustomerAddComponent implements OnInit {
-  customer: Customer;
+  public customer: Customer;
 
   constructor(
     private customerService: CustomerService,
@@ -18,6 +18,7 @@ export class CustomerAddComponent implements OnInit {
 
   ngOnInit() {
     this.customer = new Customer();
+    this.customer.name = { first: '', last: '' };
   }
 
   goBack(): void {
@@ -32,9 +33,9 @@ export class CustomerAddComponent implements OnInit {
   }
 
   validate(): boolean {
-    return this.customer.name &&
-           this.customer.name.first &&
-           this.customer.name.last;
+    return !!(this.customer.name &&
+              this.customer.name.first &&
+              this.customer.name.last);
   }
 
 }

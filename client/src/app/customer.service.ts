@@ -20,7 +20,7 @@ export class CustomerService {
     return this.http
       .get<Customer[]>(this.customersUrl)
       .pipe(
-        catchError(this.handleError('getCusomers', []))
+        catchError(this.handleError('getCustomers', []))
       );
   }
 

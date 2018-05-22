@@ -1,0 +1,57 @@
+<div class="mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="customerID">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.customerID}}</mat-cell>
+    </ng-container>
+
+    <!-- First Name Column -->
+    <ng-container matColumnDef="first">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.name.first}}</mat-cell>
+    </ng-container>
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="last">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.name.last}}</mat-cell>
+    </ng-container>
+
+    <!-- Birthday Column -->
+    <ng-container matColumnDef="birthday">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Birthday</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.birthday}}</mat-cell>
+    </ng-container>
+
+    <!-- Gender Column -->
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.gender}}</mat-cell>
+    </ng-container>
+
+    <!-- Last Contact Column -->
+    <ng-container matColumnDef="lastContact">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Last Contact</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.lastContact}}</mat-cell>
+    </ng-container>
+
+    <!-- Lifetime Value Column -->
+    <ng-container matColumnDef="customerLifetimeValue">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Lifetime Value</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.customerLifetimeValue}}</mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="customer-row" (click)="selectRow(row)"></mat-row>
+  </mat-table>
+
+  <mat-paginator #paginator
+    [length]="dataSource.data.length"
+    [pageIndex]="0"
+    [pageSize]="50"
+    [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>

@@ -1,0 +1,39 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Customers</h1>
+  <mat-grid-list cols="4" rowHeight="250px">
+    <mat-grid-tile *ngFor="let customer of customers" [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{customer.name.first}} {{customer.name.last}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item (click)="remove(customer)">Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <p>
+              <span>ID: {{customer.customerID}}</span>
+            </p>
+            <p>
+              <span>Birthday: {{customer.birthday}}</span>
+            </p>
+            <p>
+              <span>Gender: {{customer.gender}}</span>
+            </p>
+            <p *ngIf="customer.lastContact">
+              <span>Last Contact: {{customer.gender}}</span>
+            </p>
+            <p *ngIf="customer.customerLifetimeValue">
+              <span>Lifetime Value: {{customer.customerLifetimeValue}}</span>
+            </p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,12 +1,11 @@
 export class Customer {
   customerID: number;
-  name: any;
+  name: {
+    first: string;
+    last: string;
+  };
   birthday: Date;
   gender: string;
   lastContact: Date;
   customerLifetimeValue: number;
-
-  constructor() {
-    this.name = {};
-  }
 }
