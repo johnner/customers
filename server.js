@@ -9,8 +9,8 @@ const apiRouter = require('./app/routes/api');
 let app;
 
 // DB
-const { db: { host, port, name } } = config;
-const connectString = `mongodb://${host}:${port}/${name}`;
+const { db: { host, port, name, uri } } = config;
+const connectString = uri || `mongodb://${host}:${port}/${name}`;
 // db options
 let options = {
   server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },

@@ -12,7 +12,8 @@ const dev = {
     protocol: 'mongodb://',
     host: process.env.DB_HOST || 'localhost',
     port: parseInt(process.env.DB_PORT) || 27017,
-    name: process.env.DEV_DB_NAME
+    name: process.env.DEV_DB_NAME,
+    uri: process.env.MONGODB_URI
   }
 };
 
@@ -26,7 +27,8 @@ const test = {
     protocol: 'mongodb://',
     host: process.env.DB_HOST || 'localhost',
     port: parseInt(process.env.DB_PORT) || 27017,
-    name: process.env.TEST_DB_NAME
+    name: process.env.TEST_DB_NAME,
+    uri: process.env.MONGODB_URI
   }
 };
 
