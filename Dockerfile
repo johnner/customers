@@ -16,8 +16,7 @@ RUN npm install
 
 ENV NODE_ENV dev
 COPY . /opt/app
+RUN cd client && npm i
+RUN cd client && ng build --prod
 EXPOSE 3000
-
-RUN cd client && ng build
-
 CMD ["npm", "start"]

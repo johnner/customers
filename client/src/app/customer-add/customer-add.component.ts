@@ -9,8 +9,7 @@ import { CustomerService } from "../customer.service";
   styleUrls: ['./customer-add.component.less']
 })
 export class CustomerAddComponent implements OnInit {
-
-  // public customer: Customer;
+  customer: Customer;
 
   constructor(
     private customerService: CustomerService,
@@ -18,7 +17,7 @@ export class CustomerAddComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.customer = new Customer({name: {}});
+    this.customer = new Customer();
   }
 
   goBack(): void {

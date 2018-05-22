@@ -38,4 +38,10 @@ export class CustomerDetailComponent implements OnInit {
       .updateCustomer(this.customer)
       .subscribe(() => this.goBack());
   }
+
+  delete(): void {
+    this.customerService
+      .deleteCustomer(this.customer)
+      .subscribe(() => this.goBack());
+  }
 }
