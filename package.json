@@ -2,10 +2,10 @@
   "name": "customers",
   "version": "1.0.0",
   "scripts": {
-    "start": "set NODE_ENV=dev && node server",
+    "start": "npm run build:prod && set NODE_ENV=dev && node server",
     "test": "set NODE_ENV=test && mocha --timeout 10000",
     "build": "cd client && ng build",
-    "build:prod": "webpack -p --progress",
+    "build:prod": "cd client && npm i && ng build --prod",
     "ng_test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
