@@ -1,30 +1,52 @@
 <div *ngIf="customer">
-  <h2>{{ customer.name.first}} Details</h2>
-  <div><span>id: </span>{{customer.customerID}}</div>
-  <div>
-    <p>
-      <label>name:
-        <input [(ngModel)]="customer.name.first" placeholder="first name">
-        <input [(ngModel)]="customer.name.last" placeholder="last name">
-      </label>
-    </p>
-    <p>
-      <label>birthday:
-        <input [(ngModel)]="customer.birthday" placeholder="birthday">
-      </label>
-    </p>
-    <p>
-      <label>gender:
-        <input [(ngModel)]="customer.gender" placeholder="gender">
-      </label>
-    </p>
-    <p>
-      <label>Lifetime Value
-        <input [(ngModel)]="customer.customerLifetimeValue" placeholder="customerLifetimeValue">
-      </label>
-    </p>
-  </div>
-  <button (click)="save()">save</button>
-  <button (click)="delete()">delete</button>
-  <button (click)="goBack()">< go back</button>
+  <form class="edit-customer-form" name="edit-customer-form">
+    <h2>{{customer.name.first}} {{customer.name.last}}</h2>
+    <div>
+      <p>Customer ID: {{customer.customerID}}</p>
+    </div>
+    <div>
+      <mat-form-field class="customer-form-field">
+        <input matInput
+               placeholder="First name"
+               [(ngModel)]="customer.name.first"
+               name="first">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="customer-form-field">
+        <input matInput placeholder="Last name"
+               [(ngModel)]="customer.name.last"
+               name="last">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker"
+               placeholder="Birthday date"
+               name="birthday"
+               [(ngModel)]="customer.birthday">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-select [(value)]="selected" [(ngModel)]="customer.gender" name="gender">
+          <mat-option value="m">Male</mat-option>
+          <mat-option value="f">Female</mat-option>
+          <mat-option value="o">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="customer-form-field">
+        <input matInput placeholder="Lifetime Value"
+               [(ngModel)]="customer.customerLifetimeValue"
+               name="customerLifetimeValue">
+      </mat-form-field>
+    </div>
+      <button mat-raised-button (click)="save()" class="form-btn" color="primary">Save</button>
+      <button mat-raised-button (click)="delete()" class="form-btn" color="warn">Delete</button>
+      <button mat-raised-button (click)="goBack()" class="form-btn">Return</button>
+  </form>
 </div>

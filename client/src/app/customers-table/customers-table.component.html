@@ -22,7 +22,7 @@
     <!-- Birthday Column -->
     <ng-container matColumnDef="birthday">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Birthday</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{row.birthday}}</mat-cell>
+      <mat-cell *matCellDef="let row">{{row.birthday | date:'MM-dd-yyyy'}}</mat-cell>
     </ng-container>
 
     <!-- Gender Column -->

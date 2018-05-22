@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Customer } from "../customer";
 import { CustomerService } from "../customer.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dashboard',
@@ -10,7 +11,7 @@ import { CustomerService } from "../customer.service";
 export class DashboardComponent {
   customers: Customer[] = [];
 
-  constructor(private service: CustomerService) {}
+  constructor(private service: CustomerService, private router: Router) {}
 
   ngOnInit() {
     this.getCustomers();
@@ -24,5 +25,9 @@ export class DashboardComponent {
   remove(customer: Customer): void {
     this.customers = this.customers.filter(c => c !== customer );
     this.service.deleteCustomer(customer).subscribe();
+  }
+
+  edit(customer: Customer): void {
+    this.router.navigate([`customers/${customer.customerID}`]);
   }
 }

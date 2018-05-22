@@ -3,7 +3,6 @@ import { MatPaginator, MatSort } from '@angular/material';
 import { CustomersTableDataSource } from './customers-table-datasource';
 import { CustomerService } from "../customer.service";
 import { Router } from '@angular/router';
-import { AppRoutingModule } from "../app-routing.module";
 
 @Component({
   selector: 'customers-table',
