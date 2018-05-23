@@ -36,7 +36,5 @@ App using MongoDB to manage customer data, please define connection settings in 
 `./test.sh`
 
 # Deployment (with heroku)
-- make sure DB settings are actual (it's easier to set `uri` config for production environment)
-- Run deployment script `./deploy.sh customers-management-app`
-
-
+- Update DB settings: just make sure to set MONGODB_URI environment variable in production environment.
+- Run deployment script with Heroku app name argument: `./deploy.sh customers-management-app` 
