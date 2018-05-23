@@ -33,7 +33,7 @@ router.post('/customers', function(req, res) {
     gender,
     customerLifetimeValue
   }).then(customer => {
-    res.json(customer)
+    res.json(201, customer);
   });
 });
 

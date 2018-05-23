@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import  { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { CustomerDetailComponent} from "./customer-detail/customer-detail.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { CustomersTableComponent } from "./customers-table/customers-table.component";
@@ -14,7 +16,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [
+    RouterModule.forRoot(routes),
+    FormsModule,
+    MatFormFieldModule
+  ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

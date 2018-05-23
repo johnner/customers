@@ -33,6 +33,11 @@ App modules should import `config.js` to get configuration values.
 App is using MongoDB to manage customer data. 
 DB connection settings should be defined either in `.env` file or by environment variables.
 
+## Tests
+
+- Script to run server tests: `./test.sh`
+- To run SPA unit tests: `cd client && ng test`
+
 ## Deployment (with heroku)
 - Update DB settings: just make sure to set MONGODB_URI environment variable in production environment.
 - Run deployment script with Heroku app name argument: `./deploy.sh customers-management-app` 

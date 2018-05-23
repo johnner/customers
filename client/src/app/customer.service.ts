@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Customer } from './customer';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { MessageService} from "./message.service";
-import { CUSTOMERS } from './mock-customers';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -12,9 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class CustomerService {
   private customersUrl = 'api/customers';
 
-  constructor(
-    private http: HttpClient,
-    private messageService: MessageService) { }
+  constructor(private http: HttpClient) { }
 
   getCustomers(): Observable<Customer[]> {
     return this.http

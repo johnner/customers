@@ -1,5 +1,8 @@
 #!/bin/bash
 
-# run test
+# re-build customer app
+# docker-compose up -d --no-deps --build customers_app
+# run tests
 docker-compose -f docker-compose.test.yml up --build --no-deps -d
-docker logs -f customers_test_1 --tail 4
+# display logs
+docker logs -f customers_test_1

@@ -21,4 +21,10 @@ describe('NavComponent', () => {
   it('should compile', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should have title`, async(() => {
+    const fixture = TestBed.createComponent(NavComponent);
+    const na = fixture.debugElement.componentInstance;
+    expect(nav.title).toEqual('Customers Management');
+  }));
 });
