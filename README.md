@@ -2,6 +2,8 @@
 
 Simple web application built with: Docker, MongoDB, Nodejs, Express, Angular 6
 
+Demo : https://customers-management-app.herokuapp.com
+
 ## Project structure:
 Nodejs Express server configured at the project root (`server.js` and `app` directory).
 `app` directory contains server-related models and routes.
@@ -32,4 +34,9 @@ App using MongoDB to manage customer data, please define connection settings in 
 
 - run server tests:
 `./test.sh`
+
+# Deployment (with heroku)
+- make sure DB settings are actual (it's easier to set `uri` config for production environment)
+- Run deployment script `./deploy.sh customers-management-app`
+
 
