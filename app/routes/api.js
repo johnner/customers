@@ -64,7 +64,7 @@ router.put('/customers/:id', function (req, res) {
 
 
 /*
- * DEKETE /customer/:id route to delete a customer
+ * DELETE /customer/:id route to delete a customer
  */
 router.delete('/customers/:id', function (req, res) {
   Customer.findOneAndRemove({ 'customerID': req.params.id }, (err, customer) => {
